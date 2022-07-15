@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
+      "vopbot/1.0.0": {
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.116"
+        },
+        "runtime": {
+          "vopbot.dll": {}
+        }
+      },
       "Stub.System.Data.SQLite.Core.NetStandard/1.0.116": {
         "runtime": {
           "lib/netstandard2.1/System.Data.SQLite.dll": {
@@ -44,6 +52,11 @@
     }
   },
   "libraries": {
+    "vopbot/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Stub.System.Data.SQLite.Core.NetStandard/1.0.116": {
       "type": "package",
       "serviceable": true,
