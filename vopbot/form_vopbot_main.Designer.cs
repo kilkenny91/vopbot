@@ -37,6 +37,8 @@
             this.openDBLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.installToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -74,27 +76,29 @@
             this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crawlToolStripMenuItem,
             this.reloadToolStripMenuItem,
-            this.openDBLocationToolStripMenuItem});
+            this.openDBLocationToolStripMenuItem,
+            this.adminToolStripMenuItem});
             this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
             this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.operationsToolStripMenuItem.Text = "Operations";
+            this.operationsToolStripMenuItem.Click += new System.EventHandler(this.operationsToolStripMenuItem_Click);
             // 
             // crawlToolStripMenuItem
             // 
             this.crawlToolStripMenuItem.Name = "crawlToolStripMenuItem";
-            this.crawlToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.crawlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crawlToolStripMenuItem.Text = "Crawl";
             // 
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             // 
             // openDBLocationToolStripMenuItem
             // 
             this.openDBLocationToolStripMenuItem.Name = "openDBLocationToolStripMenuItem";
-            this.openDBLocationToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.openDBLocationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openDBLocationToolStripMenuItem.Text = "Open DB Location";
             // 
             // helpToolStripMenuItem
@@ -115,6 +119,21 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(800, 411);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.installToolStripMenuItem});
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // installToolStripMenuItem
+            // 
+            this.installToolStripMenuItem.Name = "installToolStripMenuItem";
+            this.installToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.installToolStripMenuItem.Text = "Install";
+            this.installToolStripMenuItem.Click += new System.EventHandler(this.installToolStripMenuItem_Click);
             // 
             // form_vop_bot_main
             // 
@@ -146,5 +165,7 @@
         private ToolStripMenuItem openDBLocationToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private DataGridView dataGridView1;
+        private ToolStripMenuItem adminToolStripMenuItem;
+        private ToolStripMenuItem installToolStripMenuItem;
     }
 }

@@ -14,24 +14,27 @@ namespace vopbot
         private void form_vop_bot_main_Load(object sender, EventArgs e)
         {
             // dataGridView1.AutoGenerateColumns = false;
-            string cs = @"URI=file:C:\Users\Jano\Documents\test.db";
+            string cs = @"URI=file:test.db";
             using var con = new SQLiteConnection(cs);
             con.Open();
-            using var cmd = new SQLiteCommand(con);
-
-            cmd.CommandText = @"CREATE TABLE cars(id INTEGER PRIMARY KEY,
-            name TEXT, price INT)";
-            cmd.ExecuteNonQuery();
-
-            string stm = "SELECT * FROM cars LIMIT 5";
-            using var selectcmd = new SQLiteCommand(stm, con);
-            using SQLiteDataReader rdr = selectcmd.ExecuteReader();
-
-            while (rdr.Read())
+            try
             {
-                Console.WriteLine($"{rdr.GetInt32(0)} {rdr.GetString(1)} {rdr.GetInt32(2)}");
-            }
+                string stm = "SELECT * FROM cars LIMIT 5";
+                using var selectcmd = new SQLiteCommand(stm, con);
+                using SQLiteDataReader rdr = selectcmd.ExecuteReader();
 
+                while (rdr.Read())
+                {
+                    Console.WriteLine($"{rdr.GetInt32(0)} {rdr.GetString(1)} {rdr.GetInt32(2)}");
+                }
+            }
+            catch { 
+                MessageBox.Show("Table not initilized"); 
+            } 
+            finally { 
+                con.Close(); 
+            }
+            
             var table = new DataTable();
             table.Columns.Add("VM-Name", typeof(string));
             table.Columns.Add("Tenant", typeof(string));
@@ -63,6 +66,23 @@ namespace vopbot
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void operationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void installToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string cs = @"URI=file:test.db";
+            using var con = new SQLiteConnection(cs);
+            con.Open();
+            using var cmd = new SQLiteCommand(con);
+
+            cmd.CommandText = @"CREATE TABLE cars(id INTEGER PRIMARY KEY,
+            name TEXT, price INT)";
+            cmd.ExecuteNonQuery();
         }
     }
 }
